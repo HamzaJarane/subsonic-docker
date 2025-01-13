@@ -41,6 +41,11 @@ ln -sf "$(which lame)" /var/subsonic/transcode/lame
 cp /opt/subsonic/mikmod_stdout /var/subsonic/transcode
 cp /opt/subsonic/timidity_stdout /var/subsonic/transcode
 
+# Fix -Dsubsonic.defaultMusicFolder=/var/music: No such file or directory
+mkdir -p "$SUBSONIC_DEFAULT_MUSIC_FOLDER"
+mkdir -p "$SUBSONIC_DEFAULT_PODCAST_FOLDER"
+mkdir -p "$SUBSONIC_DEFAULT_PLAYLIST_FOLDER"
+
 # Make sure permissions are correct on /var/subsonic
 chown subsonic:subsonic /var/subsonic
 
