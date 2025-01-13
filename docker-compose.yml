@@ -1,0 +1,16 @@
+services:
+  subsonic-app:
+    image: hamzajarane/subsonic:latest
+    restart: unless-stopped
+    container_name: subsonic-app
+    ports:
+      - 8080:8080/tcp
+    environment:
+      - SUBSONIC_MAX_MEMORY=512
+      - SUBSONIC_PORT=8080
+      - SUBSONIC_UID=33
+      - SUBSONIC_GID=33
+    volumes:
+      - ./data/music:/var/music
+      - ./data/playlists:/var/playlists
+      - ./data/subsonic:/var/subsonic
