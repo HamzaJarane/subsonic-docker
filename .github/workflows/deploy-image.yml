@@ -22,7 +22,7 @@ jobs:
         with:
           images: hamzajarane/subsonic
           flavor: |
-            latest=false
+            latest=true
           tags: |
             type=ref,event=tag
             type=ref,event=branch
